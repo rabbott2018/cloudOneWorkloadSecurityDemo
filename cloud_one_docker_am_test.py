@@ -22,7 +22,7 @@ def dockeramtest(host_id, policy_id, configuration, api_version, overrides, oper
                 cmd = "sudo apt-get install docker.io -y" 
                 output = runcommand(cmd)
             if("redhat" in operating_system):
-                cmd = "sudo yum install docker" 
+                cmd = "sudo yum install docker -y" 
                 output = runcommand(cmd)
         else:
             docker_installed = True
@@ -74,7 +74,7 @@ def cleanup(operating_system):
         cmd = "sudo apt-get --purge remove docker.io -y" 
         output = runcommand(cmd) 
     if("redhat" in operating_system):
-        cmd = "sudo yum remove docker" 
+        cmd = "sudo yum remove docker -y" 
         output = runcommand(cmd)
     if("windows" in operating_system):
         cmd = "Docker_Desktop_Installer.exe uninstall --quiet" 
