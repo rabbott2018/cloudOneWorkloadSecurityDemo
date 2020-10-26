@@ -1,5 +1,6 @@
 # cloudOneWorkloadSecurityDemo
 These scripts will help you trigger events in Cloud One Workload Security
+NOTE: These scripts are provided as-is with no implied support.  You are welcome to comment if you find issues, but there's no guarantee on if or when they'll be fixed.
 
 Before running these scripts perform ensure you have the following:
 1)	A Cloud One Workload Security Account
