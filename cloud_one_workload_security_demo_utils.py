@@ -14,13 +14,18 @@ def getoperatingsystem():
     system_info = platform.system()
     release_info = platform.release()
 
+    #Added this as a secondary test since platform is not always correct
+    if("linux" in platform_info.lower()):
+        cmd = "uname -a"
+        output = runcommand(cmd)
+
     # If the platform is something other than what's been tested, exit
-    if("ubuntu" not in platform_info.lower() and "redhat" not in platform_info.lower() and "windows" not in platform_info.lower()):
+    if("ubuntu" not in platform_info.lower() and "redhat" not in platform_info.lower() and "windows" not in platform_info.lower() and "ubuntu" not in output.lower() and "redhat" not in output.lower()):
         print("Currently these tests only work on Ubuntu, Redhat and Windows.  Exiting!!")
-        #exit()
+        exit()
     
     # Otherwise let's lowercase everything and return the operating system
-    if("ubuntu" in platform_info.lower()):
+    if("ubuntu" in platform_info.lower() or "ubuntu" in output.lower()):
         operating_system = "ubuntu"
     elif("redhat" in platform_info.lower()):
         operating_system = "redhat"
